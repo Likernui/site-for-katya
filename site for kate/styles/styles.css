@@ -1,0 +1,161 @@
+body {
+    margin: 0;    /* Убирает внешние отступы */
+    padding: 0;   /* Убирает внутренние отступы */
+    height: 100%; /* Растягивает body на всю высоту */
+  }
+  
+img {
+    max-width: 100%; /* Не выходит за границы родителя */
+    height: auto; /* Сохраняет пропорции */
+  }
+
+.container {
+    display: flex;
+    max-width: 1100px;
+  }
+
+aside {
+    background-color: #1D282A;
+    min-height: 100vh; /* На всю высоту экрана */
+    width: 25%; /* 25% от ширины контейнера */
+    min-width: 250px; /* Минимальная ширина */
+
+  }
+
+.aside-logo{
+    max-width: 60%;
+}
+.aside-welcome{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.aside-welcome p{
+    color: #444E4F;
+}
+.img-social{
+    max-width: 70px;
+    padding-top: 20px;
+}
+
+.burger-menu {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: black;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    font-size: 18px;
+    padding-top: 30px;
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+.menu-list a{
+    padding: 10px;    
+}
+.menu-list a:hover{
+    background-color: #444E4F;
+}
+main {
+    flex: 1; /* Занимает оставшееся пространство */
+    padding-left: 20px;
+  }
+
+.main-title{
+    padding-top: 30px;
+}
+main img{
+    width: 100%;
+}
+
+.line-bottom{
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Автоподбор колонок */
+    gap: 20px;
+  }
+
+.cards img{
+    width: 200px;
+    height: 150px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-card{
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Минимум 1.5rem, максимум 2.5rem */
+  }
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+
+/* Стили для мобильной версии (600px и меньше) */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    
+    aside {
+        display: none; /* Скрываем сайдбар в мобильной версии */
+    }
+    
+    main {
+        padding: 20px 15px;
+    }
+    
+    h1, h2, h3 {
+        font-size: 1.2rem; /* Уменьшаем размер шрифта */
+    }
+    
+    .cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    .social-icon {
+        display: none; /* Скрываем социальные иконки */
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .burger-menu {
+        display: block; /* Показать кнопку на мобильных устройствах */
+    }
+
+}
